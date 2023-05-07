@@ -1,66 +1,69 @@
-import { useState } from "react";
-import { Layout } from "components";
+import { useState } from 'react' //rock
+import { Layout, Input } from 'components'
 
 export const CadastroCidades: React.FC = () => {
     
-    const [cidade, setCidade] = useState('')
+    const [cidade, setCidade] = useState<string>('') //variavel e o metodo modificador
 
-    const [estado, set] = useState('')
+    const [estado, setEstado] = useState<string>('')
 
-    const [outro, setOutro] = useState('')
+    const [outro, setOutro] = useState<string>('')
+
+
+    const submit = () => {
+      const cidades = {
+        cidade,
+        estado,
+        outro
+      }
+      console.log(cidades)
+    }
 
   return (
     <Layout titulo="Cadastros de Cidades">
+      <div className="columns">
 
-      <div className="columns"></div>
-      <div className="field is-half column">
-        <label className="label" htmlFor="inputCidade">
-          Cidade:
-        </label>
-        <div className="control">
-          <input
-            className="input"
-            id="inputCidade" value = {cidade}
-            placeholder="Digite o nome da cidade"
-          />
-        </div>
+        <Input label = "Cidade: " 
+        columnClasses="is-half"
+        onChange={setCidade}
+        value={cidade}
+        id="inputCidade" 
+        placeholder="Digite o nome da cidade"      
+        />
+        
+        <Input label = "Estado: " 
+        columnClasses="is-half"
+        onChange={setEstado}
+        value={estado}
+        id="inputEstado" 
+        placeholder="Digite o nome do Estado em SIGLAS"     
+        />
+
       </div>
 
-      <div className="field is-half column">
-        <label className="label" htmlFor="inputEstado">
-          Estado:
-        </label>
-        <div className="control">
-          <input
-            className="input"
-            id="inputEstado" value = {estado}
-            placeholder="Digite o nome da Estado em SIGLAS"
-          />
-        </div>
-      </div>
+      <div className="columns">
+      <Input label = "Outro: " 
+        columnClasses="field column is-full"
+        onChange={setOutro}
+        value={outro}
+        id="inputOutro" 
+        placeholder="Digite o nome de outro Estado/Referência"     
+        />
 
-      <div className="field is-half column">
-        <label className="label" htmlFor="inputOutro">
-          Outro:
-        </label>
-        <div className="control">
-          <input
-            className="input"
-            id="inputOutro" value = {outro}
-            placeholder="Digite o nome de outro Estado/Referência"
-          />
-        </div>
-      </div>
+    
+
+    </div>
 
 
       <div className="field is-grouped">
-        <div className="control">
-          <button className="button">Salvar</button>
+        <div className="control is-link">
+          <button onClick={submit} className="button">Salvar</button>
         </div>
+
         <div className="control">
           <button className="button">Voltar</button>
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}

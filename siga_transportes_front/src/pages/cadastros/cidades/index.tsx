@@ -1,3 +1,3 @@
-import { CadastroCidades } from 'components';
+import { CadastroCidades } from 'components'
 
 export default CadastroCidades
