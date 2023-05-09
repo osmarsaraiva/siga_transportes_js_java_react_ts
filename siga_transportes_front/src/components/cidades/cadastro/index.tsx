@@ -24,7 +24,7 @@ export const CadastroCidades: React.FC = () => {
       <div className="columns">
 
         <Input label = "Cidade: " 
-        columnClasses="is-half"
+        columnClasses="is-four-thirds"
         onChange={setCidade}
         value={cidade}
         id="inputCidade" 
@@ -32,7 +32,7 @@ export const CadastroCidades: React.FC = () => {
         />
         
         <Input label = "Estado: " 
-        columnClasses="is-half"
+        columnClasses="is-one-quarter"
         onChange={setEstado}
         value={estado}
         id="inputEstado" 
