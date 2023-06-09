@@ -45,13 +45,13 @@ git push -u origin main
 
 git remote add origin https://github.com/osmarsaraiva/siga_transportes_js_node_post.git
 git branch -M main
-git push -u origin main
+git push -u origin main - atualizar no local via git hub
 
 
 
 git add .
 git commit -a -m "fdsfasf"
-git push origin main
+git push
 
 
 
