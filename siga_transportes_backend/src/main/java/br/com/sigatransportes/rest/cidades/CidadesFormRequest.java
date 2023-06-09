@@ -1,4 +1,4 @@
-package br.com.sigatransportes;
+package br.com.sigatransportes.rest.cidades;
 
 
 public class CidadesFormRequest {
@@ -6,7 +6,6 @@ public class CidadesFormRequest {
 	private String cidade;
 	private String estado;
 	private String outro;
-	
 	
 	
 	public String getCidade() {
