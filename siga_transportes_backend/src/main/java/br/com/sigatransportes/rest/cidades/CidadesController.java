@@ -1,6 +1,7 @@
 package br.com.sigatransportes.rest.cidades;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import br.com.sigatransportes.model.repository.CidadeRepository;
 
 @RestController //ligar api
 @RequestMapping("/api/cidades") //plural - mapeamento
+@CrossOrigin("*")
 public class CidadesController {
 	
 	
