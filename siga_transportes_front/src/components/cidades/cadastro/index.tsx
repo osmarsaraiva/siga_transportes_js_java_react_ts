@@ -1,22 +1,25 @@
 import { useState } from 'react' //rock
 import { Layout, Input } from 'components'
+import { useCidadeService } from 'app/services'
+import { cidade } from '/app/models/cidades'
 
 export const CadastroCidades: React.FC = () => {
     
+    const service = useCidadeService()
     const [cidade, setCidade] = useState<string>('') //variavel e o metodo modificador
-
     const [estado, setEstado] = useState<string>('')
-
     const [outro, setOutro] = useState<string>('')
 
 
     const submit = () => {
-      const cidades = {
+      const cidades: Cidade = {
         cidade,
         estado,
         outro
       }
-      console.log(cidades)
+      service
+      .salvar(cidade)
+      .then(cidadeResposta => console.log(cidadeResposta))  
     }
 
   return (

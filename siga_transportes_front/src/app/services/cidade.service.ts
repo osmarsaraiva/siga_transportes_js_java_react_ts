@@ -9,4 +9,8 @@ export const useCidadeService = () => {
         const response: AxiosResponse<Cidade> = await httpClient.post<Cidade>(resourceURL, cidade )
         return response.data;
     }
+
+    return {
+        salvar
+    }
 }
